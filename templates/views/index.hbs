@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="/images/weather.png">
+    <title> From a static file</title>
+</head>
+<body>
+    <div class="main-content">
+        {{>header}}
+
+        <p>Use this site to get weather</p>
+        <form>
+            <input placeholder="Enter Location">                
+            <button>Search</button>
+        </form>
+
+
+        <p id ="message-1"></p>
+        <p id="message-2"></p>
+
+    </div>
+          {{!-- <h1>{{title}}</h1> --}}
+          {{!-- to access object used in app.js we need to use  2 curly braces{{}}  --}}
+          {{!-- <p>Created by {{name}}</p> --}}
+       {{>footer}}
+<script src = "./js/app.js"></script>
+
+</body>
+</html>
