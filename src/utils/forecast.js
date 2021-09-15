@@ -1,7 +1,7 @@
 const request = require('postman-request')
 
 const forecast = (latitude, longitude,callback) => {
-    const url = 'http://api.weatherstack.com/current?access_key=40e422ba23109f64c18872d2f1c4081a&query=' + latitude + ',' + longitude + '&units=f'
+    const url = 'http://api.weatherstack.com/current?access_key=40e422ba23109f64c18872d2f1c4081a&query=' + latitude + ',' + longitude + '&units=m'
     // request({ url:url, json:true }, (error, response) => { 
       //rplacing response with body
       request({ url, json:true }, (error, {body}) => {
@@ -16,7 +16,7 @@ const forecast = (latitude, longitude,callback) => {
             }
             else
             {
-              callback(undefined,'Its '+body.current.weather_descriptions[0]+'. Currently temperature is '+ body.current.temperature+' degrees out.There is '+body.current.feelslike +' % chance of rain')
+              callback(undefined,'Its '+body.current.weather_descriptions[0]+'. Currently temperature is '+ body.current.temperature+' degrees out.There is '+body.current.feelslike +' % chance of rain. '+ '  The humidity is '+body.current.humidity+ "%")
 
             }
 })
