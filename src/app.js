@@ -116,6 +116,11 @@ app.get('*',(req,res)=>{ // '*' ==> represents everything that doesnot match wit
         errorMessage:'Page not found'
     })
 })
-app.listen(4000,()=>{
-    console.log('Listening on: 4000')
+// app.listen(4000,()=>{
+//     console.log('Listening on: 4000')
+// })
+
+const port = process.env.PORT||4000
+app.listen(port,()=>{
+    console.log('Server is running on port: '+port);
 })

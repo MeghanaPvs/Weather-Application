@@ -26,7 +26,7 @@ weatherForm.addEventListener('submit',(event)=>{
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = '' //empty string: to clear the previous location value
     
-    fetch('http://localhost:4000/weather?address='+location).then((response) => {
+    fetch('/weather?address='+location).then((response) => {
     //+location: --> to know which address we need to specify in form
     response.json().then((data) => {
     if (data.error) {
